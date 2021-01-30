@@ -28,3 +28,16 @@ library(readr)
 plants <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv")
 ```
 
+## Filtrando datos de plantas chilenas extintas
+
+El trabajo corresponde a lo planteado en el siguiente [slide](https://derek-corcoran-barrios.github.io/CursoProgrPres/Clase2/Clase2InvestigacionReproducible.html#29). Utilizando los datos Chile, en donde las columnas de interés son; para país (*country*), especie (*binomial_name*) y categoría de la IUCN (*red_list_category*)
+
+```{r}
+Chile <- plants %>% 
+  dplyr::filter(country == "Chile") %>% 
+  dplyr::select(binomial_name, country, red_list_category)
+
+Chile
+
+```
+

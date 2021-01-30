@@ -44,3 +44,25 @@ plants <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesda
     ##   red_list_category = col_character()
     ## )
     ## i Use `spec()` for the full column specifications.
+
+## Filtrando datos de plantas chilenas extintas
+
+El trabajo corresponde a lo planteado en el siguiente
+[slide](https://derek-corcoran-barrios.github.io/CursoProgrPres/Clase2/Clase2InvestigacionReproducible.html#29).
+Utilizando los datos Chile, en donde las columnas de interés son; para
+país (*country*), especie (*binomial\_name*) y categoría de la IUCN
+(*red\_list\_category*)
+
+``` r
+Chile <- plants %>% 
+  dplyr::filter(country == "Chile") %>% 
+  dplyr::select(binomial_name, country, red_list_category)
+
+Chile
+```
+
+    ## # A tibble: 2 x 3
+    ##   binomial_name           country red_list_category  
+    ##   <chr>                   <chr>   <chr>              
+    ## 1 Santalum fernandezianum Chile   Extinct            
+    ## 2 Sophora toromiro        Chile   Extinct in the Wild

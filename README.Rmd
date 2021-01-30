@@ -13,3 +13,18 @@ knitr::opts_chunk$set(echo = TRUE)
 En este documento se hablará acerca de las plantas exintas según la [**IUCN**](https://www.iucnredlist.org/)
 
 
+## Trabajando con los datos
+
+Se comienza cargando los paquetes necesarios para trabajar
+
+```{r}
+library(tidyverse)
+```
+
+Con esto realizado, se leen los datos con los que se va a trabajar
+
+```{r}
+library(readr)
+plants <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv")
+```
+

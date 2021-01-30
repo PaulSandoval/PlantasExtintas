@@ -41,3 +41,13 @@ Chile
 
 ```
 
+## Resumen especies extintas por país en Sudamérica
+
+```{r}
+resumenpaises <- plants %>% 
+  dplyr::filter(continent == "South America") %>% 
+  group_by(country) %>%
+  summarise(n_especies = n())
+resumenpaises
+```
+
